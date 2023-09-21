@@ -1,6 +1,6 @@
 import React from "react";
 import EventCard from "../../components/events/EventCard";
-import styles from "./index.module.css";
+import styles from "../../styles/events.module.css";
 import { useSelector } from "react-redux";
 
 const index = () => {

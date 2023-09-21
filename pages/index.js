@@ -14,9 +14,9 @@ export default function Home() {
       <main>
         <div className={styles.landingPageContainer}>
           <h1>Welcome to event scheduling website</h1>
-          <button>
-            <Link href="/events">upcoming events</Link>
-          </button>
+          <Link href="/events">
+            <button>upcoming events</button>
+          </Link>
         </div>
       </main>
     </>

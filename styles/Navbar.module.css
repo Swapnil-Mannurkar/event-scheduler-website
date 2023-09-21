@@ -1,9 +1,10 @@
 .navbarContainer {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 40px 0;
+  padding: 40px 0 20px;
 }
 
 .list {
@@ -14,4 +15,12 @@
   gap: 1rem;
   color: orange;
   font-weight: bolder;
+}
+
+.navbarContainer::after {
+  content: "";
+  width: 90%;
+  height: 3px;
+  background-color: red;
+  margin-top: 30px;
 }
