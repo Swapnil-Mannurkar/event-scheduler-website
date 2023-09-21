@@ -13,7 +13,7 @@
   margin: 0;
   display: flex;
   gap: 1rem;
-  color: orange;
+  color: white;
   font-weight: bolder;
 }
 
@@ -21,6 +21,6 @@
   content: "";
   width: 90%;
   height: 3px;
-  background-color: red;
+  background-color: orange;
   margin-top: 30px;
 }
