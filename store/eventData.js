@@ -29,6 +29,9 @@ const eventData = createSlice({
     addItem(state, actions) {
       state.push(actions.payload);
     },
+    deleteItem(state, actions) {
+      return state.filter((event) => event.id !== actions.payload);
+    },
   },
 });
 

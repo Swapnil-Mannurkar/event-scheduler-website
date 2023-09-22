@@ -1,14 +1,18 @@
 import React from "react";
 import styles from "./EventCard.module.css";
+import { useDispatch } from "react-redux";
+import { eventActions } from "@/store/eventData";
 
 const EventCard = (props) => {
+  const dispatch = useDispatch();
+
   const editCardHandler = (event) => {
     event.preventDefault();
-    console.log(props.id, props.title);
   };
 
   const deleteCardHandler = (event) => {
     event.preventDefault();
+    dispatch(eventActions.deleteItem(props.id));
   };
 
   return (
@@ -36,7 +40,7 @@ const EventCard = (props) => {
         </div>
         <div className={styles.cardControls}>
           <button onClick={editCardHandler}>EDIT CARD</button>
-          <button>DELETE CARD</button>
+          <button onClick={deleteCardHandler}>DELETE CARD</button>
         </div>
       </div>
     </div>
