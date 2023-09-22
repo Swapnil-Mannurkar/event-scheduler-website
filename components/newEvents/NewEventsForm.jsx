@@ -20,7 +20,7 @@ const NewEventsForm = () => {
     event.preventDefault();
 
     const newEvent = {
-      id: data.length + 1,
+      id: Number(data[data.length - 1].id) + 1,
       title,
       image: imageURL,
       date,
@@ -30,6 +30,7 @@ const NewEventsForm = () => {
     };
 
     dispatch(eventActions.addItem(newEvent));
+    console.log(newEvent.id);
     router.push("/events");
   };
 
