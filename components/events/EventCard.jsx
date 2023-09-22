@@ -2,6 +2,15 @@ import React from "react";
 import styles from "./EventCard.module.css";
 
 const EventCard = (props) => {
+  const editCardHandler = (event) => {
+    event.preventDefault();
+    console.log(props.id, props.title);
+  };
+
+  const deleteCardHandler = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className={styles.eventCardContainer}>
       <div className={styles.imageContainer}>
@@ -26,7 +35,7 @@ const EventCard = (props) => {
           </div>
         </div>
         <div className={styles.cardControls}>
-          <button>EDIT CARD</button>
+          <button onClick={editCardHandler}>EDIT CARD</button>
           <button>DELETE CARD</button>
         </div>
       </div>

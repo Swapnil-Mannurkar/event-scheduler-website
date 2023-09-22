@@ -20,3 +20,8 @@
 .landingPageContainer button:hover {
   cursor: pointer;
 }
+
+.homeButtons {
+  display: flex;
+  gap: 2rem;
+}

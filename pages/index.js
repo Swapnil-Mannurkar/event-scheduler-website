@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
+import styles from "./Home.module.css";
 import Link from "next/link";
 
 export default function Home() {
@@ -14,9 +14,14 @@ export default function Home() {
       <main>
         <div className={styles.landingPageContainer}>
           <h1>Welcome to event scheduling website</h1>
-          <Link href="/events">
-            <button>upcoming events</button>
-          </Link>
+          <div className={styles.homeButtons}>
+            <Link href="/events">
+              <button>upcoming events</button>
+            </Link>
+            <Link href="/new-event">
+              <button>add new event</button>
+            </Link>
+          </div>
         </div>
       </main>
     </>

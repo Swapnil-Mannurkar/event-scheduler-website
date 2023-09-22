@@ -11,6 +11,7 @@ const index = () => {
       {eventData.map((event) => (
         <EventCard
           key={event.id}
+          id={event.id}
           image={event.image}
           title={event.title}
           date={event.date}

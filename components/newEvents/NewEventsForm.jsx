@@ -1,33 +1,40 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./NewEventsForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { eventActions } from "@/store/eventData";
 import { useRouter } from "next/router";
 
 const NewEventsForm = () => {
-  let titleEntered = useRef("");
-  let imageURLEntered = useRef("");
-  let dateEntered = useRef("");
-  let timeEntered = useRef("");
-  let locationEntered = useRef("");
-  let descriptionEntered = useRef("");
+  const [title, setTitle] = useState("");
+  const [imageURL, setImageURL] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [location, setLocation] = useState("");
+  const [description, setDescription] = useState("");
+
   const dispatch = useDispatch();
-  let data = useSelector((state) => state.eventData);
   const router = useRouter();
+  const data = useSelector((state) => state.eventData);
 
   const submitHandler = (event) => {
     event.preventDefault();
+
     const newEvent = {
       id: data.length + 1,
-      title: titleEntered.current.value,
-      image: imageURLEntered.current.value,
-      date: dateEntered.current.value,
-      time: timeEntered.current.value,
-      location: locationEntered.current.value,
-      description: descriptionEntered.current.value,
+      title,
+      image: imageURL,
+      date,
+      time,
+      location,
+      description,
     };
+
     dispatch(eventActions.addItem(newEvent));
     router.push("/events");
+  };
+
+  const cancelHandler = () => {
+    router.push("/");
   };
 
   return (
@@ -38,9 +45,9 @@ const NewEventsForm = () => {
         </label>
         <input
           type="text"
-          value={titleEntered.current.value}
+          value={title}
           placeholder="Enter the name of the event"
-          ref={titleEntered}
+          onChange={(e) => setTitle(e.target.value)}
           required
         />
       </div>
@@ -48,21 +55,32 @@ const NewEventsForm = () => {
         <label>Event Location Image URL</label>
         <input
           type="text"
-          ref={imageURLEntered}
+          value={imageURL}
           placeholder="Enter the URL of the location image"
+          onChange={(e) => setImageURL(e.target.value)}
         />
       </div>
       <div className={styles.inputContainer}>
         <label>
           Event Date <span style={{ color: "red" }}>*</span>
         </label>
-        <input type="date" ref={dateEntered} required />
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          required
+        />
       </div>
       <div className={styles.inputContainer}>
         <label>
           Event Time <span style={{ color: "red" }}>*</span>
         </label>
-        <input type="time" ref={timeEntered} required />
+        <input
+          type="time"
+          value={time}
+          onChange={(e) => setTime(e.target.value)}
+          required
+        />
       </div>
       <div className={styles.inputContainer}>
         <label>
@@ -70,8 +88,9 @@ const NewEventsForm = () => {
         </label>
         <input
           type="text"
-          ref={locationEntered}
+          value={location}
           placeholder="Enter the location of the event"
+          onChange={(e) => setLocation(e.target.value)}
           required
         />
       </div>
@@ -79,13 +98,14 @@ const NewEventsForm = () => {
         <label>Event Description</label>
         <textarea
           rows={3}
-          ref={descriptionEntered}
+          value={description}
           placeholder="Enter the description/agenda of the event"
+          onChange={(e) => setDescription(e.target.value)}
         ></textarea>
       </div>
       <div className={styles.formControls}>
-        <button>CANCEL</button>
-        <button>SUBMIT</button>
+        <button onClick={cancelHandler}>CANCEL</button>
+        <button type="submit">SUBMIT</button>
       </div>
     </form>
   );

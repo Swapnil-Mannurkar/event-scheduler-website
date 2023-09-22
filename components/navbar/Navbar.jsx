@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/Navbar.module.css";
+import styles from "./Navbar.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -22,9 +22,9 @@ const Navbar = () => {
           EVENTS
         </Link>
         <Link
-          href="/new-events"
+          href="/new-event"
           className={
-            router.pathname === "/new-events" ? `${styles.active}` : " "
+            router.pathname === "/new-event" ? `${styles.active}` : " "
           }
         >
           NEW EVENT
