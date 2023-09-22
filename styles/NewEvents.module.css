@@ -1,9 +1,8 @@
 .newEventContainer {
   width: 100%;
-  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }

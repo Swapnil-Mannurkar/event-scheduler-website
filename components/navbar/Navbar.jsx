@@ -11,19 +11,21 @@ const Navbar = () => {
       <ul className={styles.list}>
         <Link
           href="/"
-          className={router.pathname === "/" && `${styles.active}`}
+          className={router.pathname === "/" ? `${styles.active}` : " "}
         >
           HOME
         </Link>
         <Link
           href="/events"
-          className={router.pathname === "/events" && `${styles.active}`}
+          className={router.pathname === "/events" ? `${styles.active}` : " "}
         >
           EVENTS
         </Link>
         <Link
           href="/new-events"
-          className={router.pathname === "/new-events" && `${styles.active}`}
+          className={
+            router.pathname === "/new-events" ? `${styles.active}` : " "
+          }
         >
           NEW EVENT
         </Link>

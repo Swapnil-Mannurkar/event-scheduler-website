@@ -10,6 +10,7 @@ const index = () => {
     <div className={styles.eventsContainer}>
       {eventData.map((event) => (
         <EventCard
+          key={event.id}
           image={event.image}
           title={event.title}
           date={event.date}
