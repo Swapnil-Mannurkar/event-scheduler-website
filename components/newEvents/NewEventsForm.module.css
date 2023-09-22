@@ -1,0 +1,54 @@
+.newEventForm {
+  width: 40%;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1.2rem;
+  padding: 25px 40px;
+  border-radius: 12px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.inputContainer label {
+  font-weight: bold;
+}
+
+.inputContainer input,
+.inputContainer textarea {
+  outline: none;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.inputContainer input:focus,
+.inputContainer textarea:focus {
+  border: 2px solid orange;
+}
+
+.formControls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.formControls button {
+  padding: 5px 20px;
+  border: 2px solid orange;
+  background-color: white;
+  color: orange;
+  font-weight: bold;
+}
+
+.formControls button:hover {
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+}
