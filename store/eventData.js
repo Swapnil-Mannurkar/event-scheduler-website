@@ -32,6 +32,19 @@ const eventData = createSlice({
     deleteItem(state, actions) {
       return state.filter((event) => event.id !== actions.payload);
     },
+    editItem(state, actions) {
+      const updatedEvent = actions.payload;
+      state.map((event) => {
+        if (event.id === updatedEvent.id) {
+          event.title = updatedEvent.title;
+          event.image = updatedEvent.image;
+          event.date = updatedEvent.date;
+          event.time = updatedEvent.time;
+          event.location = updatedEvent.location;
+          event.description = updatedEvent.description;
+        }
+      });
+    },
   },
 });
 

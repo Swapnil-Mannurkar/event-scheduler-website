@@ -1,52 +1,51 @@
-import React, { useRef, useState } from "react";
-import styles from "./NewEventsForm.module.css";
+import React, { useState } from "react";
+import styles from "./EditEventForm.module.css";
+import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { eventActions } from "@/store/eventData";
-import { useRouter } from "next/router";
 
-const NewEventsForm = () => {
-  const [title, setTitle] = useState("");
-  const [image, setImage] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [location, setLocation] = useState("");
-  const [description, setDescription] = useState("");
+const EditEventForm = () => {
+  const router = useRouter();
+  const { id, title, image, date, time, location, description } = router.query;
+
+  const [newTitle, setTitle] = useState(title);
+  const [newImage, setImage] = useState(image);
+  const [newDate, setDate] = useState(date);
+  const [newTime, setTime] = useState(time);
+  const [newLocation, setLocation] = useState(location);
+  const [newDescription, setDescription] = useState(description);
 
   const dispatch = useDispatch();
-  const router = useRouter();
   const data = useSelector((state) => state.eventData);
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const newEvent = {
-      id: Number(data[data.length - 1].id) + 1,
-      title,
-      image,
-      date,
-      time,
-      location,
-      description,
+    const updatedEvent = {
+      id: id,
+      title: newTitle,
+      image: newImage,
+      date: newDate,
+      time: newTime,
+      location: newLocation,
+      description: newDescription,
     };
 
-    dispatch(eventActions.addItem(newEvent));
+    dispatch(eventActions.editItem(updatedEvent));
     router.push("/events");
   };
 
   const cancelHandler = () => {
-    router.push("/");
+    router.push("/events");
   };
 
   return (
     <form className={styles.newEventForm} onSubmit={submitHandler}>
       <div className={styles.inputContainer}>
-        <label>
-          Event Title <span style={{ color: "red" }}>*</span>
-        </label>
+        <label>Event Title</label>
         <input
           type="text"
-          value={title}
-          placeholder="Enter the name of the event"
+          value={newTitle}
           onChange={(e) => setTitle(e.target.value)}
           required
         />
@@ -55,40 +54,34 @@ const NewEventsForm = () => {
         <label>Event Location Image URL</label>
         <input
           type="text"
-          value={image}
+          value={newImage}
           placeholder="Enter the URL of the location image"
           onChange={(e) => setImage(e.target.value)}
         />
       </div>
       <div className={styles.inputContainer}>
-        <label>
-          Event Date <span style={{ color: "red" }}>*</span>
-        </label>
+        <label>Event Date</label>
         <input
           type="date"
-          value={date}
+          value={newDate}
           onChange={(e) => setDate(e.target.value)}
           required
         />
       </div>
       <div className={styles.inputContainer}>
-        <label>
-          Event Time <span style={{ color: "red" }}>*</span>
-        </label>
+        <label>Event Time</label>
         <input
           type="time"
-          value={time}
+          value={newTime}
           onChange={(e) => setTime(e.target.value)}
           required
         />
       </div>
       <div className={styles.inputContainer}>
-        <label>
-          Event Location <span style={{ color: "red" }}>*</span>
-        </label>
+        <label>Event Location</label>
         <input
           type="text"
-          value={location}
+          value={newLocation}
           placeholder="Enter the location of the event"
           onChange={(e) => setLocation(e.target.value)}
           required
@@ -98,7 +91,7 @@ const NewEventsForm = () => {
         <label>Event Description</label>
         <textarea
           rows={2}
-          value={description}
+          value={newDescription}
           placeholder="Enter the description/agenda of the event"
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
@@ -111,4 +104,4 @@ const NewEventsForm = () => {
   );
 };
 
-export default NewEventsForm;
+export default EditEventForm;

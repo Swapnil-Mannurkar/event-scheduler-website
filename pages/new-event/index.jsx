@@ -5,7 +5,7 @@ import NewEventsForm from "@/components/newEvents/NewEventsForm";
 const index = () => {
   return (
     <div className={styles.newEventContainer}>
-      <h2>New event form</h2>
+      <h2>Add new event</h2>
       <NewEventsForm />
     </div>
   );
