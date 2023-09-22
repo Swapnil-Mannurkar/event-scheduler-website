@@ -97,7 +97,7 @@ const NewEventsForm = () => {
       <div className={styles.inputContainer}>
         <label>Event Description</label>
         <textarea
-          rows={3}
+          rows={2}
           value={description}
           placeholder="Enter the description/agenda of the event"
           onChange={(e) => setDescription(e.target.value)}
