@@ -44,9 +44,9 @@ const EventCard = (props) => {
           <h3>{props.date}</h3>
           <h3>{props.time}</h3>
           <h3>{props.location}</h3>
-          <div className={styles.description}>
+          <p className={styles.description}>
             {props.description ? props.description : "No description provided!"}
-          </div>
+          </p>
         </div>
         <div className={styles.cardControls}>
           <button onClick={editCardHandler}>EDIT CARD</button>

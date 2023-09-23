@@ -1,6 +1,6 @@
 .eventCardContainer {
   background-color: whitesmoke;
-  width: 80%;
+  width: 60%;
   height: 100%;
   color: black;
   display: flex;
@@ -10,8 +10,8 @@
 }
 
 .imageContainer {
-  width: 35vw;
-  height: 30vh;
+  width: 25vw;
+  height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,14 +35,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: 0.4rem;
-  overflow: hidden;
+  gap: 0.2rem;
+  font-size: 0.8rem;
 }
 
 .description {
+  width: 100%;
+  height: 15px;
+  text-overflow: ellipsis;
   text-align: justify;
-  height: 60px;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .description::-webkit-scrollbar {

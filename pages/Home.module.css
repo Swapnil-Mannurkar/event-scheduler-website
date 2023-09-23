@@ -8,7 +8,7 @@
   gap: 2rem;
 }
 
-.landingPageContainer button {
+.homeButtons button {
   background-color: transparent;
   color: orange;
   border-color: orange;
@@ -17,8 +17,10 @@
   font-weight: bold;
 }
 
-.landingPageContainer button:hover {
+.homeButtons button:hover {
   cursor: pointer;
+  background-color: orange;
+  color: black;
 }
 
 .homeButtons {
