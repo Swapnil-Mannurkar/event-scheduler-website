@@ -25,5 +25,22 @@
 
 .homeButtons {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+  .landingPageContainer {
+    width: 80%;
+    margin: auto;
+  }
+
+  .landingPageContainer h1 {
+    text-align: center;
+  }
+
+  .homeButtons {
+    flex-direction: column;
+  }
 }
