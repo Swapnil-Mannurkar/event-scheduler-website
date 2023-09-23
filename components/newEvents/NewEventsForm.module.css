@@ -22,6 +22,7 @@
 
 .inputContainer input,
 .inputContainer textarea {
+  width: 100%;
   outline: none;
   border: 1px solid #222222;
   border-radius: 4px;
@@ -35,7 +36,6 @@
 
 .formControls {
   width: 100%;
-  overflow: hidden;
   display: flex;
   justify-content: flex-end;
   gap: 2rem;
@@ -53,4 +53,20 @@
   background-color: orange;
   color: white;
   cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .newEventForm {
+    width: 85%;
+    padding: 30px;
+  }
+
+  .formControls {
+    margin-top: 10px;
+    gap: 1rem;
+  }
+
+  .formControls button {
+    width: 100%;
+  }
 }

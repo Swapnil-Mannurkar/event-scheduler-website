@@ -11,9 +11,7 @@ const index = () => {
     <div className={styles.editEventContainer}>
       <h1>
         Edit{" "}
-        <span
-          style={{ textDecoration: "underline", textTransform: "lowercase" }}
-        >
+        <span style={{ color: "orange", textTransform: "lowercase" }}>
           {title}
         </span>{" "}
         event
