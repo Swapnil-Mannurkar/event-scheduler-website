@@ -20,7 +20,7 @@ const NewEventsForm = () => {
     event.preventDefault();
 
     const newEvent = {
-      id: Number(data[data.length - 1].id) + 1,
+      id: String(Number(data[data.length - 1].id) + 1),
       title,
       image,
       date,
