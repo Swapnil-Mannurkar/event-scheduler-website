@@ -6,7 +6,9 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px 2px orange;
 }
 
 .imageContainer {
@@ -72,7 +74,7 @@
 
 @media screen and (max-width: 500px) {
   .eventCardContainer {
-    width: 80%;
+    width: 85%;
     flex-direction: column;
     gap: 0.5rem;
   }
@@ -83,7 +85,7 @@
   }
 
   .cardControls {
-    width: 90%;
+    width: 100%;
     flex-direction: column;
     margin: auto;
     gap: 0.5rem;
