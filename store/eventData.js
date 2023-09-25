@@ -7,6 +7,7 @@ const data = [
     title: "First meetup",
     date: "2023-09-22",
     time: "18:00",
+    duration: "60",
     location: "UK27, Belgaum",
     description: "This is our first meet",
   },
@@ -17,6 +18,7 @@ const data = [
     title: "Second meetup",
     date: "2023-09-24",
     time: "18:00",
+    duration: "60",
     location: "Fairfield Marriott, Belgaum",
     description: "This is our second meet",
   },
@@ -40,6 +42,7 @@ const eventData = createSlice({
           event.image = updatedEvent.image;
           event.date = updatedEvent.date;
           event.time = updatedEvent.time;
+          event.duration = updatedEvent.duration;
           event.location = updatedEvent.location;
           event.description = updatedEvent.description;
         }

@@ -6,17 +6,18 @@ import { eventActions } from "@/store/eventData";
 
 const EditEventForm = () => {
   const router = useRouter();
-  const { id, title, image, date, time, location, description } = router.query;
+  const { id, title, image, date, time, duration, location, description } =
+    router.query;
 
   const [newTitle, setTitle] = useState(title);
   const [newImage, setImage] = useState(image);
   const [newDate, setDate] = useState(date);
   const [newTime, setTime] = useState(time);
+  const [newDuration, setDuration] = useState(duration);
   const [newLocation, setLocation] = useState(location);
   const [newDescription, setDescription] = useState(description);
 
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.eventData);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -27,6 +28,7 @@ const EditEventForm = () => {
       image: newImage,
       date: newDate,
       time: newTime,
+      duration: newDuration,
       location: newLocation,
       description: newDescription,
     };
@@ -74,6 +76,16 @@ const EditEventForm = () => {
           type="time"
           value={newTime}
           onChange={(e) => setTime(e.target.value)}
+          required
+        />
+      </div>
+      <div className={styles.inputContainer}>
+        <label>Event Duration</label>
+        <input
+          type="number"
+          value={newDuration}
+          placeholder="Enter the duration of the event in minutes"
+          onChange={(e) => setDuration(e.target.value)}
           required
         />
       </div>

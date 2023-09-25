@@ -24,6 +24,7 @@ const index = () => {
             title={event.title}
             date={event.date}
             time={event.time}
+            duration={event.duration}
             location={event.location}
             description={event.description}
           />

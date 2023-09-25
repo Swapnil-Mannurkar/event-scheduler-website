@@ -9,6 +9,7 @@ const NewEventsForm = () => {
   const [image, setImage] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [duration, setDuration] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
 
@@ -25,6 +26,7 @@ const NewEventsForm = () => {
       image,
       date,
       time,
+      duration,
       location,
       description,
     };
@@ -79,6 +81,18 @@ const NewEventsForm = () => {
           type="time"
           value={time}
           onChange={(e) => setTime(e.target.value)}
+          required
+        />
+      </div>
+      <div className={styles.inputContainer}>
+        <label>
+          Event Duration <span style={{ color: "red" }}>*</span>
+        </label>
+        <input
+          type="number"
+          value={duration}
+          placeholder="Enter the duration of the event in minutes"
+          onChange={(e) => setDuration(e.target.value)}
           required
         />
       </div>

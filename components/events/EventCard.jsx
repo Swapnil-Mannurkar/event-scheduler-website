@@ -18,6 +18,7 @@ const EventCard = (props) => {
         image: props.image,
         date: props.date,
         time: props.time,
+        duration: props.duration,
         location: props.location,
         description: props.description,
       },
@@ -43,6 +44,7 @@ const EventCard = (props) => {
           <h2>{props.title}</h2>
           <h3>{props.date}</h3>
           <h3>{props.time}</h3>
+          <h3>{props.duration} minutes</h3>
           <h3>{props.location}</h3>
           <p className={styles.description}>
             {props.description ? props.description : "No description provided!"}
