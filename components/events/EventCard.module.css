@@ -11,6 +11,11 @@
   box-shadow: 1px 1px 5px 2px orange;
 }
 
+.orange {
+  color: orange;
+  font-size: 1rem;
+}
+
 .imageContainer {
   width: 25vw;
   height: 20vh;

@@ -8,7 +8,6 @@ import Head from "next/head";
 const index = () => {
   const eventData = useSelector((state) => state.eventData);
   const isEmpty = eventData.length === 0;
-  console.log(isEmpty);
 
   return (
     <>

@@ -41,11 +41,22 @@ const EventCard = (props) => {
       </div>
       <div className={styles.cardDetailsContainer}>
         <div className={styles.cardDetails}>
-          <h2>{props.title}</h2>
-          <h3>{props.date}</h3>
-          <h3>{props.time}</h3>
-          <h3>{props.duration} minutes</h3>
-          <h3>{props.location}</h3>
+          <h3>
+            <span className={styles.orange}>TITLE:</span> {props.title}
+          </h3>
+          <h3>
+            <span className={styles.orange}>DATE:</span> {props.date}
+          </h3>
+          <h3>
+            <span className={styles.orange}>TIME:</span> {props.time}
+          </h3>
+          <h3>
+            <span className={styles.orange}>DURATION:</span> {props.duration}{" "}
+            minutes
+          </h3>
+          <h3>
+            <span className={styles.orange}>LOCATION:</span> {props.location}
+          </h3>
           <p className={styles.description}>
             {props.description ? props.description : "No description provided!"}
           </p>
