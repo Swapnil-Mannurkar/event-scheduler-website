@@ -29,7 +29,7 @@ const NewEventsForm = () => {
     };
 
     const newEvent = {
-      id: getId(),
+      id: getId(data),
       title,
       image,
       date,
