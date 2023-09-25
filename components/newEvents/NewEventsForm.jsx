@@ -20,8 +20,16 @@ const NewEventsForm = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    const getId = (data) => {
+      if (data.length === 0) {
+        return "1";
+      } else {
+        return String(Number(data[data.length - 1].id) + 1);
+      }
+    };
+
     const newEvent = {
-      id: String(Number(data[data.length - 1].id) + 1),
+      id: getId(),
       title,
       image,
       date,
