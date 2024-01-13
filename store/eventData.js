@@ -29,14 +29,14 @@ const eventData = createSlice({
   initialState: data,
   reducers: {
     addItem(state, actions) {
-      state.push(actions.payload);
+      return state.push(actions.payload);
     },
     deleteItem(state, actions) {
       return state.filter((event) => event.id !== actions.payload);
     },
     editItem(state, actions) {
       const updatedEvent = actions.payload;
-      state.map((event) => {
+      return state.map((event) => {
         if (event.id === updatedEvent.id) {
           event.title = updatedEvent.title;
           event.image = updatedEvent.image;

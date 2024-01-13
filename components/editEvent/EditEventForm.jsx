@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./EditEventForm.module.css";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { eventActions } from "@/store/eventData";
 
 const EditEventForm = () => {
